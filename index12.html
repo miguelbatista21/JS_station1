@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <title>Aula 09 — Javascript</title>
+ <meta charset="utf-8">
+
+
+ <script>
+
+  document.write(" ");
+
+  var nome=prompt("Nome do aluno:");
+  var nota=prompt("Nota do aluno:");
+  var res;
+
+  // Aprovado ->   >=85
+  // Recuperação -> >=40 && <60
+  // Reprovado ->  <40
+  // Passou de raspão -> =60
+
+  if (nota>=85) {
+   res="Aluno" + " " + nome + " foi aprovado.";
+  } else if ((nota>=30) && (nota<50)) {
+   res="Aluno" + " " + nome + " ficou de recuperação.";
+  } else if (nota==60) {
+   res= "Aluno" + " " + nome + " passou de raspão.";
+  } else {
+   res="Aluno" + " " + nome +  " foi reprovado.";
+  }
+
+  document.write(res);
+
+ </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

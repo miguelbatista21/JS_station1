@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <Button onclick="numberPress(0)">
+      0
+    </Button>
+
+
+    <Button onclick="numberPress(1)">
+      1
+    </Button>
+
+    <Button onclick="numberPress(2)">
+        2
+    </Button>
+    
+    <Button onclick="operationPress('+')">
+      +
+    </Button>
+    
+    <Button onclick="operationPress('/')">
+    /
+    </Button>
+    
+    
+    <Button onclick="resultPress()">
+      =
+    </Button>
+
+
+</body>
+
+<script>
+
+let number1 = null;
+let number2 = null;
+let operation = null;
+
+function numberPress(num) {
+  if (number1 == null) {
+    number1 = num;
+  } else {
+    number2 = num;
+  }
+}
+
+function operationPress(op) {
+  operation = op;
+}
+
+
+
+function resultPress() {
+  if (number1 != null && number2 != null) {
+    let result = 0;
+    if (operation == '+') {
+      result = number1 + number2;
+    }
+    if (operation == '/') {
+      result = number1 / number2;
+    }
+    console.log("RESULTADO: ", result);
+    number1 = null;
+    number2 = null;
+  }
+}
+</script>
+
+</html>
