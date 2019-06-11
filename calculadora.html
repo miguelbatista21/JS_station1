@@ -8,24 +8,35 @@
 </head>
 <body>
     
-    <Button onclick="numberPress(0)">
+    <Button value="0" onclick="numberPress(this)">
       0
     </Button>
 
-
-    <Button onclick="numberPress(1)">
+    <Button value="1" onclick="numberPress(this)">
       1
     </Button>
 
-    <Button onclick="numberPress(2)">
+    <Button value="2" onclick="numberPress(this)">
         2
     </Button>
-    
-    <Button onclick="operationPress('+')">
+
+    <Button value="3" onclick="numberPress(this)">
+      3
+    </Button>
+
+    <Button value="4" onclick="numberPress(this)">
+      4
+    </Button>
+
+    <Button value="5" onclick="numberPress(this)">
+      5
+    </Button>
+
+    <Button value="+" onclick="operationPress(this)">
       +
     </Button>
     
-    <Button onclick="operationPress('/')">
+    <Button value="/" onclick="operationPress(this)">
     /
     </Button>
     
@@ -39,38 +50,45 @@
 
 <script>
 
-let number1 = null;
-let number2 = null;
+let primeiro_numero = null;
+let segundo_numero = null;
 let operation = null;
 
-function numberPress(num) {
-  if (number1 == null) {
-    number1 = num;
+function numberPress(btn) {
+  console.log("pressionou número: " + btn.value);
+  if (primeiro_numero == null) {
+    primeiro_numero = btn.value;
   } else {
-    number2 = num;
+    segundo_numero = btn.value;
   }
 }
 
-function operationPress(op) {
-  operation = op;
+function operationPress(btn) {
+  console.log("pressionou operação: " + btn.value);
+  operation = btn.value;
 }
 
 
 
 function resultPress() {
-  if (number1 != null && number2 != null) {
+  console.log("pressionou resultado com primeiro_numero: " + primeiro_numero);
+  console.log("e segundo_numero: " + segundo_numero);
+  if (primeiro_numero != null && segundo_numero != null) {
     let result = 0;
     if (operation == '+') {
-      result = number1 + number2;
+      result = Number(primeiro_numero) + Number(segundo_numero);
     }
     if (operation == '/') {
-      result = number1 / number2;
+      result = Number(primeiro_numero) / Number(segundo_numero);
+    }
+    if (operation == '*') {
+      result = Number(primeiro_numero) * Number(segundo_numero);
     }
     console.log("RESULTADO: ", result);
-    number1 = null;
-    number2 = null;
+    primeiro_numero = null;
+    segundo_numero = null;
   }
 }
 </script>
 
-</html>
+</html> 
