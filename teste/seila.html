@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <title>(5) exiba a quantidade de letras que possuem o texto inserido ao clicar no botão
+  </title>
+</head>
+<input type="text" name="nome-completo" id="nome-completo" placeholder="Digite seu nome" />
+<button onclick="verificar()">
+  Verificar
+</button>
+
+<body>
+  <script type="text/javascript">
+
+    function verificar() {
+      const textInput = document.getElementById("nome-completo");
+      const text = textInput.value;
+      alert(`
+        Você escreveu: ${text} \n
+        Que contém ${text.trim().replace(/\s/g, '').length} letras \n
+        <3 <3 
+      `);
+    }
+
+  </script>
+</body>
+
+</html>

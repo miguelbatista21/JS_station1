@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <title>JS Examples</title>
+</head>
+
+<body text="black" bgcolor="green">
+  <img alt="Minha Foto" id="my-photo" onclick="trocar()"
+    src="https://github.com/gabrieldarezzo/helpjs-ravi/blob/master/images/lampada.jpg?raw=true" />
+
+  <script>
+    const URL_APAGADA = "https://github.com/gabrieldarezzo/helpjs-ravi/blob/master/images/lampada.jpg?raw=true";
+    const URL_ACESA = "https://github.com/gabrieldarezzo/helpjs-ravi/blob/master/images/lampada-on.jpg?raw=true";
+
+    function trocar() {
+      img = document.getElementById('my-photo');
+      if (img.src == URL_APAGADA) {
+        img.src = URL_ACESA;
+      } else {
+        img.src = URL_APAGADA;
+      }
+
+    }
+
+
+  </script>
+
+
+
+
+</body>
+
+</html>
